@@ -102,10 +102,60 @@ def edit_movie(file_path_movies):
     movies = movies["peliculas"]#vuelto a acortar los diccionarios
     op = key_menu(movies)
     op2 = key_menu_movies(movies[op])
-    if(op2 != "actores" and op2 != "formato" and op2 != "actores"):
+    if(op2 != "actores" and op2 != "formato" and op2 != "generos"):
         new_value = input(f"el anterior valor era {movies[op][op2]}, digite el nuevo: ")
         movies[op][op2] = new_value
+    else:
+        op3 = key_menu_movies(movies[op][op2])
+        op4 = key_menu_movies(movies[op][op2][op3])
+        new_value = input(f"el anterior valor era {movies[op][op2][op3][op4]}, digite el nuevo: ")
+        movies[op][op2][op3][op4] = new_value
+    movies = {
+        "blockbuster":{
+            "peliculas":movies
+        }
+    }     
     save_json(movies,file_path_movies)
+
+def remove_movie(file_path_movies):
+    clean_screen()
+    movies = load_json(file_path_movies)
+    op = key_menu(movies["blockbuster"]["peliculas"])
+    movies["blockbuster"]["peliculas"].pop(op)   
+    save_json(movies,file_path_movies)
+
+def remove_actor(file_path_movies):
+    clean_screen()
+    movies = load_json(file_path_movies)
+    op = key_menu(movies["blockbuster"]["peliculas"])
+    list_actors = list(movies["blockbuster"]["peliculas"][op]["actores"])
+    if(len(list_actors) == 0):
+        print("No se encuentran actores para eliminar")
+        stop()
+        return
+    op2 = key_menu(movies["blockbuster"]["peliculas"][op]["actores"])
+    movies["blockbuster"]["peliculas"][op]["actores"].pop(op2)   
+    save_json(movies,file_path_movies)
+
+def search_movie(file_path_movies):
+    clean_screen()
+    movies = load_json(file_path_movies)
+    movies = movies["blockbuster"]#acorto los diccionarios
+    movies = movies["peliculas"]#vuelto a acortar los diccionarios
+    movie_name = input("Ingrese el nombre de la pelicula: ")
+    found = False
+    for id in movies:
+        if(movies[id]["nombre"] == movie_name):
+            print("Se encontro la pelicula")
+            print("id :",movies[id]["id"])
+            print("nombre :",movies[id]["nombre"])
+            print("duracion :",movies[id]["duracion"])  
+            print("sinopsis :",movies[id]["sinopsis"])
+            found = True  
+
+    if(not found):
+        print("No se encontro una pelicula con ese nombre")
+    stop()
 
 def show_movies(file_path_movies):
     clean_screen()
