@@ -1,0 +1,39 @@
+{
+  "P01": {
+    "id": null,
+    "nombre": "spiderman3000",
+    "duracion": "1 hora",
+    "sinopsis": "salkfdas",
+    "generos": {
+      "G01": {
+        "id": "G01",
+        "nombre": "Accion"
+      },
+      "G02": {
+        "id": "G02",
+        "nombre": "suspenso"
+      }
+    },
+    "actores": {
+      "A01": {
+        "id": "A01",
+        "nombre": "xxxxxxx",
+        "rol": "reparto"
+      }
+    },
+    "formato": {
+      "F01": {
+        "id": "F01",
+        "nombre": "DVD",
+        "NroCopias": 2,
+        "valorPrestamo": 2
+      },
+      "F02": {
+        "id": "F02",
+        "nombre": "BlueRay",
+        "NroCopias": 2,
+        "valorPrestamo": 2
+      }
+    }
+  }
+}

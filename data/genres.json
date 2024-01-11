@@ -1,0 +1,10 @@
+{
+  "G01": {
+    "id": "G01",
+    "nombre": "Accion"
+  },
+  "G02": {
+    "id": "G02",
+    "nombre": "suspenso"
+  }
+}
