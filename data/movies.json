@@ -1,6 +1,6 @@
 {
   "P01": {
-    "id": null,
+    "id": "PO1",
     "nombre": "spiderman3000",
     "duracion": "1 hora",
     "sinopsis": "salkfdas",
@@ -15,11 +15,10 @@
       }
     },
     "actores": {
-      "A01": {
-        "id": "A01",
-        "nombre": "xxxxxxx",
-        "rol": "reparto"
-      }
+        "A02": {
+            "id": "A02",
+            "nombre": "Silvester Stallone"
+          }
     },
     "formato": {
       "F01": {
