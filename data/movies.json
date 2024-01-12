@@ -1,5 +1,6 @@
-{
-  "P01": {
+{ "blockbuster":{
+    "peliculas":{
+        "P01": {
     "id": "PO1",
     "nombre": "spiderman3000",
     "duracion": "1 hora",
@@ -35,4 +36,7 @@
       }
     }
   }
+    }
+}
+  
 }
